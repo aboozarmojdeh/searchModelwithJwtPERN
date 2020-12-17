@@ -16,6 +16,8 @@ app.use('/auth', require("./routes/jwtAuth"));
 app.use('/dashboard', require("./routes/dashboard"));
 
 // models route
+app.use('/models',require("./routes/models"))
+// main page route
 app.use('/',require("./routes/home"))
 
 
