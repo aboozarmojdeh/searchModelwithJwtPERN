@@ -3,7 +3,7 @@ const pool = require("../db");
 const router = express.Router();
 const authorization=require('../middleware/authorization');
 
-router.get('/',authorization, async(req,res)=>{
+router.get('/', async(req,res)=>{
     try {
         // res.json(req.user) //req.user=user_id
         const {modelName}=req.query;
