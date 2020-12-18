@@ -5,14 +5,14 @@ const Home = () => {
   return (
     <Fragment>
       <div className="container">
-        <ul class="nav justify-content-end">
+        <ul class="nav justify-content-end my-3">
           <li class="nav-item">
             <a class="nav-link" href="/register">
               Join now
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/login">
+            <a class="nav-link btn btn-outline-primary" aria-current="page" href="/login">
               Sign in
             </a>
           </li>
@@ -28,6 +28,17 @@ const Home = () => {
               <img src={mainPagefashion} width="100%" height="400" alt="Logo" />
             </div>
           </div>
+          <div class="row my-3">
+          <div class="col-sm">
+              <h2 className="mainPage-h2">Find fashion, fitness and photography models</h2>
+              
+              </div>
+              <div class="col-sm">
+              <h2 className="mainPage-h2">Find fashion, fitness and photography models</h2>
+              
+              </div>
+          </div>
+
         </div>
       </div>
     </Fragment>
