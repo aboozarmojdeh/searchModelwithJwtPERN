@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   Redirect,
+  Link
 } from "react-router-dom";
 import "./App.css";
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Home from "./components/Home";
 
 toast.configure();
 
@@ -40,9 +42,18 @@ const App = () => {
 
   return (
     <Fragment>
+       
       <Router>
+    
         <div className="container">
           <Switch>
+          <Route
+              exact
+              path="/"
+              render={(props) =><Home {...props}/>
+                
+              }
+            />
             <Route
               exact
               path="/login"
