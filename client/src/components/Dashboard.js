@@ -1,5 +1,6 @@
 import React, { Fragment,useState,useEffect } from "react";
 import { toast } from "react-toastify";
+import modelPic from '../img/modelPic.png';
 const Dashboard = ({ setAuth }) => {
 const [name,setName]=useState("");
 const [modelName,setModelName]=useState("");
@@ -79,7 +80,7 @@ const superModelMap=superModels.map((superModel)=>{
         </li> */}
       </ul>
       <form class="d-flex">
-      <p class="me-2">Welcome {name.toUpperCase()}!</p>
+      <p class="me-2">Welcome {name}!</p>
         {/* <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" /> */}
         {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
         <button className='btn btn-danger' onClick={(e)=>logout(e)}>Logout</button>
@@ -88,17 +89,22 @@ const superModelMap=superModels.map((superModel)=>{
     </div>
   </div>
 </nav>
+
+<div class="imgcontainer text-center my-3">
+        <img src={modelPic} alt="Sign-in" width="250" height="150" />
+      </div>
+      
       {/* <h1>Super Model Search</h1>
       <p>Welcome {name}!</p> */}
       <div className="container text-center">
-        <h1 className="my-5">Party List</h1>
-        <form className="d-flex" onSubmit={onSubmitForm}>
+        {/* <h1 className="my-5">Party List</h1> */}
+        <form className="d-flex my-5" onSubmit={onSubmitForm}>
           <input
           required="required"
             className="form-control"
             type="text"
             name="name"
-            placeholder="Enter user..."
+            placeholder="Enter model..."
             value={modelName}
             onChange={onSearchChange}
           />

@@ -35,6 +35,7 @@ create table models (
 	email VARCHAR(50),
 	gender VARCHAR(50)
 );
+
 insert into models (first_name, last_name, email, gender) values ('Jesse', 'Breznovic', 'jbreznovic0@cdc.gov', 'Male');
 insert into models (first_name, last_name, email, gender) values ('Arther', 'Gallety', 'agallety1@blogger.com', 'Male');
 insert into models (first_name, last_name, email, gender) values ('Thorpe', 'Benet', 'tbenet2@squidoo.com', 'Male');

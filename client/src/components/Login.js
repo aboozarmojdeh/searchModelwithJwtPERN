@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./login.css";
-import signIn from '../img/signIn.png';
+import signIn from "../img/signIn.png";
 const Login = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     email: "",
@@ -42,15 +42,22 @@ const Login = ({ setAuth }) => {
 
   return (
     <Fragment>
-     
+      <ul class="nav justify-content-end my-3">
+         
+         <li class="nav-item">
+           <a class="nav-link btn btn-outline-primary" aria-current="page" href="/">
+             Home
+           </a>
+         </li>
+       </ul>
+      <div class="imgcontainer text-center my-3">
+        <img src={signIn} alt="Sign-in" width="250" height="150" />
+      </div>
 
-
-      <div class="imgcontainer text-center my-5">
-    <img src={signIn} alt="Sign-in" style={{borderRadius:'50%',border: '1px solid #2977c9'}} width="20%" height="250" />
-  </div>
-     
       <form onSubmit={onSubmitForm}>
-      <label for="email"><b>Email</b></label>
+        <label for="email">
+          <b>Email</b>
+        </label>
         <input
           className="form-control my-3"
           type="email"
@@ -59,7 +66,9 @@ const Login = ({ setAuth }) => {
           value={email}
           onChange={(e) => handleOnchange(e)}
         />
-        <label for="password"><b>Password</b></label>
+        <label for="password">
+          <b>Password</b>
+        </label>
         <input
           className="form-control my-3"
           type="password"
@@ -68,7 +77,7 @@ const Login = ({ setAuth }) => {
           value={password}
           onChange={(e) => handleOnchange(e)}
         />
-        <button className="btn btn-success submit-btn">Login</button>
+        <button className="btn btn-success login-btn">Login</button>
       </form>
       <Link to={"/register"}>Register</Link>
     </Fragment>

@@ -1,7 +1,9 @@
 import React, { Fragment, useState } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-const Register = ({setAuth}) => {
+import "./register.css";
+import signUp from "../img/signUp.png";
+const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -27,23 +29,34 @@ const Register = ({setAuth}) => {
         body: JSON.stringify(body),
       });
       const parseRes = await response.json();
-      if(parseRes.token){
-        localStorage.setItem("token",parseRes.token);
-        setAuth(true)
+      if (parseRes.token) {
+        localStorage.setItem("token", parseRes.token);
+        setAuth(true);
         console.log(parseRes);
-        toast.success('Registered successfully!')
-      }else{
-        setAuth(false)
-        toast.error(parseRes)
+        toast.success("Registered successfully!");
+      } else {
+        setAuth(false);
+        toast.error(parseRes);
       }
-     
     } catch (err) {
       console.log(err.message);
     }
   };
   return (
     <Fragment>
-      <h1 className="text-center my-5">Register</h1>
+      <ul class="nav justify-content-end my-3">
+         
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-primary" aria-current="page" href="/">
+              Home
+            </a>
+          </li>
+        </ul>
+
+      <div class="imgcontainer text-center my-3">
+        <img src={signUp} alt="Sign-up" width="350" height="250" />
+      </div>
+
       <form onSubmit={onSubmitForm}>
         <input
           className="form-control my-3"
@@ -70,9 +83,9 @@ const Register = ({setAuth}) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="btn btn-success btn-block">Submit</button>
+        <button className="btn btn-success register-btn">Submit</button>
       </form>
-      <Link to={'/login'}>Login</Link>
+      <Link to={"/login"}>Login</Link>
     </Fragment>
   );
 };
